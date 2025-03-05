@@ -1,4 +1,4 @@
-import { Container } from "@mui/material";
+import { Container, TextField, Typography } from "@mui/material";
 import React, { useEffect } from "react";
 import { io } from "socket.io-client";
 
@@ -18,10 +18,25 @@ const App = () => {
       socket.disconnect();
     };
   }, []);
+const handleSubmit = (e) => {
+  
+}
+  return (
+    <Container maxWidth="sm">
+      <Typography variant="h1" component="div" gutterBottom>
+        Welcome to the chat app
+      </Typography>
 
-  return <Container maxWidth="sm">
-      
-  </Container>;
+      <form action="">
+        <TextField
+          id="outlined-basic"
+          label="Outlined"
+          variant="outlined"
+        ></TextField>
+        <Button variant="contained" color="primary">Send</Button>
+      </form>
+    </Container>
+  );
 };
 
 export default App;
